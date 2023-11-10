@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  background-color: #040d12;
+}
+
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
+    0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+}
+
+.neon-text-pink {
+  color: #ff77ff;
+  text-shadow: 0 0 5px #ff77ff, 0 0 10px #ff77ff, 0 0 20px #ff77ff,
+    0 0 40px #ff77ff, 0 0 80px #ff77ff, 0 0 90px #ff77ff, 0 0 100px #ff77ff,
+    0 0 150px #ff77ff;
+}
+
+.neon-text-yellow {
+  color: #ffff00; /* Yellow color code */
+  text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 20px #ffff00,
+    0 0 40px #ffff00, 0 0 80px #ffff00, 0 0 90px #ffff00, 0 0 100px #ffff00,
+    0 0 150px #ffff00;
+}
+
+.neon-text-red {
+  color: #ff0000; /* Red color code */
+  text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000,
+    0 0 40px #ff0000, 0 0 80px #ff0000, 0 0 90px #ff0000, 0 0 100px #ff0000,
+    0 0 150px #ff0000;
+}

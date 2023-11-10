@@ -1,0 +1,57 @@
+<section
+  class="text-white h-screen flex flex-col justify-center items-center font-neon relative"
+>
+  <div
+    *ngIf="gameService.isTimerExpired"
+    class="fixed inset-0 flex flex-col items-center justify-center bg-slate-900 bg-opacity-50"
+  >
+    <h2 class="neon-text-yellow text-4xl">Game Over</h2>
+    <button class="neon-text" (click)="resetGame()">Play Again</button>
+  </div>
+  <div class="flex flex-col w-90vw md:w-96 justify-between items-center">
+    <h3
+      class="text-2xl"
+      [ngClass]="activePlayer === 'O' ? 'neon-text-pink' : 'neon-text'"
+    >
+      Player {{ activePlayer }}'s turn
+    </h3>
+    <div>
+      <p>
+        <span class="neon-text-yellow text-2xl">{{ gameService.timer }} </span
+        >seconds
+      </p>
+    </div>
+  </div>
+  <div
+    class="grid grid-cols-3 justify-items-center w-90vw mx-auto mt-8 lg:w-1/2"
+  >
+    <div
+      *ngFor="let cell of board"
+      (click)="updateCell(cell)"
+      [class.neon-text]="cell.state === 'X'"
+      [class.neon-text-pink]="cell.state === 'O'"
+      class="text-white shadow-md shadow-gray-700 h-32 w-32 md:h-40 md:w-40 mb-4 rounded-3xl flex justify-center items-center text-9xl"
+    >
+      {{ cell.state }}
+    </div>
+  </div>
+  <div class="" *ngIf="winningPlayer">
+    <h3 [ngClass]="winningPlayer === 'O' ? 'neon-text-pink' : 'neon-text'">
+      Player {{ winningPlayer }} wins
+    </h3>
+    <button (click)="resetGame()" class="w-max p-4 mx-auto neon-text-yellow">
+      Play Again
+    </button>
+  </div>
+  <div *ngIf="isTie && winningPlayer === null" class="text-center">
+    <h3 class="neon-text">It's a tie!</h3>
+    <button class="w-max p-4 mx-auto neon-text-yellow" (click)="resetGame()">
+      Play Again
+    </button>
+  </div>
+  <div>
+    <a routerLink=""
+      ><i class="fas fa-home neon-text" (click)="resetGame()"></i
+    ></a>
+  </div>
+</section>
