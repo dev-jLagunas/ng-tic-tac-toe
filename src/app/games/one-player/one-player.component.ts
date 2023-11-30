@@ -37,10 +37,6 @@ export class OnePlayerComponent {
     return this.gameService.getTieResult();
   }
 
-  get gameOverStatus(): boolean {
-    return this.gameService.getGameOverStatus();
-  }
-
   resetGame(): void {
     this.gameService.resetGame();
   }

@@ -76,7 +76,6 @@ export class GameService {
     if (this.activePlayer === 'O' && !this.gameOver && !this.isTimerExpired) {
       let emptyCells = this.board.filter((cell) => cell.state === null);
       if (emptyCells.length > 0) {
-        // Choose a random empty cell for the computer's move
         const randomIndex = Math.floor(Math.random() * emptyCells.length);
         const randomCell = emptyCells[randomIndex];
         this.updateCell(randomCell);

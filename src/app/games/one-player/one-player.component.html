@@ -30,12 +30,12 @@
       (click)="updateCell(cell)"
       [class.neon-text]="cell.state === 'X'"
       [class.neon-text-pink]="cell.state === 'O'"
-      class="text-white shadow-md shadow-gray-700 h-32 w-32 md:h-40 md:w-40 mb-4 rounded-3xl flex justify-center items-center text-9xl"
+      class="text-white shadow-md shadow-gray-700 h-24 w-24 md:h-40 md:w-40 mb-4 rounded-3xl flex justify-center items-center text-9xl"
     >
       {{ cell.state }}
     </div>
   </div>
-  <div class="" *ngIf="winningPlayer">
+  <div *ngIf="winningPlayer">
     <h3 [ngClass]="winningPlayer === 'O' ? 'neon-text-pink' : 'neon-text'">
       Player {{ winningPlayer }} wins
     </h3>
