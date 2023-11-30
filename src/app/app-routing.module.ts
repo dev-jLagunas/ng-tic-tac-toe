@@ -5,7 +5,6 @@ import { OnePlayerComponent } from './games/one-player/one-player.component';
 import { TwoPlayerComponent } from './games/two-player/two-player.component';
 
 const routes: Routes = [
-  { path: '**', redirectTo: '' },
   { path: '', component: HomeComponent },
   { path: '1player', component: OnePlayerComponent },
   { path: '2player', component: TwoPlayerComponent },
